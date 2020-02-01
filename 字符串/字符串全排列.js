@@ -1,7 +1,6 @@
 function checkchongfu(arr,_p,_q) {
     for(let i = _p;i<_q;i++){
         if (arr[_q] === arr[i]) {
-            console.log(1);
             return false;
         }
     }
@@ -15,8 +14,6 @@ function f(arr, p ,q) {
         for(let i = p;i <q;i++){
             if(checkchongfu(arr,p,i)) {
                 [arr[p], arr[i]] = [arr[i], arr[p]];
-                // console.log(`i:${i}`);
-                // console.log(`p:${p}`);
                 f(arr, p + 1, q);
                 [arr[p], arr[i]] = [arr[i], arr[p]];
             }
@@ -24,5 +21,5 @@ function f(arr, p ,q) {
     }
 }
 
-let arr = ['a','b','c','d'];
+let arr = ['a','b','b'];
 f(arr,0,arr.length);
